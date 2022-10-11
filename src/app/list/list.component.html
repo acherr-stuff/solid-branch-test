@@ -1,0 +1,9 @@
+<div class="c col-6 card m-3">
+    <ul id="nav" class="nav nav-tabs" role="navigation">
+        <li class="nav-item" *ngFor="let navTab of navTabs" [class.show]="navTab.index === activeTab.index">
+            <a class="nav-link" [routerLink]="['/navigator']" [queryParams]="{tab: navTab.index}">{{navTab.label}}</a>
+        </li>
+    </ul>
+    <app-list-table [tabData]="tabDataList"></app-list-table>
+</div>
+

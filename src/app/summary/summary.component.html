@@ -1,0 +1,24 @@
+<div class="c col-6 d-flex flex-wrap mt-3 mb-3">
+    <div class="card mb-3">
+        <div class="card-header"><br></div>
+        <div class="card-body justify-content-center d-flex flex-wrap">
+            <h3 class="card-title"><strong>Welcome</strong></h3>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <button class="btn btn-primary" [routerLink]="['/navigator']" [queryParams]="{tab: 0}">See transactions</button>
+        </div>
+        <div class="card-footer text-center">
+            You have {{transactionsCount}} transactions
+        </div>
+    </div>
+    <div class="row ">
+            <div class="col-6 mb-3" *ngFor="let card of navCards">
+                <div class="card">
+                    <div class="card-body ">
+                        <h3 class="card-title"><strong>{{getCountOfTransactionsByType(card.value)}}</strong></h3>
+                        <p class="card-text">{{card.label}}</p>
+                        <div class="btn btn-primary float-right" [routerLink]="['/navigator']" [queryParams]="{tab: card.index}">See transactions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
